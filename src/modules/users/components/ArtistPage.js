@@ -16,6 +16,7 @@ const ArtistProfileBySlug = gql`
         last_name
         email
         description
+        image
       }
       media {
         media_type
@@ -132,6 +133,8 @@ const ArtistPage = ({ artist_slug, role_slug }) => {
           <a href={`mailto:${artist.email}`} className={classes.email}>
             {artist.email}
           </a>
+          <p> Artist URL: {artist}</p>
+          <img src={artist.profile_url} height="42" width="42"/>
           <p className={classes.description}>{artist.description}</p>
           <div className={classes.latest}>Photos</div>
           <ArticleList articles={articles} />
